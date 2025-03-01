@@ -9,19 +9,23 @@ public class Carro {
     private boolean seminovo;
 
     //Métodos
-    void acelerar() {
-        this.velocidade += 5;
+    public void acelerar() {
+        this.velocidade += 10;
         System.out.printf("A velocidade foi acelerada para %.2f. \n", velocidade);
     }
 
-    void frear() {
-        this.velocidade -= 5;
+    public void frear() {
+        this.velocidade -= 10;
         System.out.printf("A velocidade foi freada para %.2f. \n", velocidade);
     }
 
-    void pintar() {
-        cor = "preto";
-        System.out.printf("A cor foi alterada para: %s.\n", cor);
+    public void pintar(String novaCor) {
+        if (novaCor != null && !novaCor.isEmpty()){
+            this.cor = novaCor;
+            System.out.printf("A cor foi alterada para: %s.\n", this.cor);
+        }else {
+            System.out.println("Erro: cor inválida.");
+        }
     }
 
 //Método para verificar se carro é seminovo
